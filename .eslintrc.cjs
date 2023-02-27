@@ -1,48 +1,40 @@
+// .eslintrc.js
+
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true
+    parser: '@typescript-eslint/parser',
+    extends: [
+      'eslint:recommended',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:@typescript-eslint/recommended-requiring-type-checking'
+    ],
+    parserOptions: {
+      ecmaVersion: 2020,
+      sourceType: 'module',
+      tsconfigRootDir: __dirname,
+      project: ['./tsconfig.json'],
+      extraFileExtensions: ['.svelte']
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:vue/vue3-essential",
-        "plugin:@typescript-eslint/recommended"
-    ],
-    "overrides": [
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module",
-        "project":['./tsconfig.json']
+    env: {
+      es6: true,
+      browser: true
     },
-    "plugins": [
-        "vue",
-        "@typescript-eslint",
-        "unused-imports"
+    overrides: [
+      {
+        files: ['*.svelte'],
+        processor: 'svelte3/svelte3'
+      }
     ],
-    "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
-        "linebreak-style": [
-            "error",
-            "windows"
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
-		"unused-imports/no-unused-imports": "error",
-		"unused-imports/no-unused-vars": [
-			"warn",
-			{ "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
-		]
+    settings: {
+      'svelte3/typescript': () => require('typescript'),
+    },
+    plugins: ['svelte3', '@typescript-eslint', 'unused-imports'],
+    ignorePatterns: ['node_modules', 'dist', 'svelte.config.js'],
+    rules: {
+      "no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+      ]
     }
-}
+  }
