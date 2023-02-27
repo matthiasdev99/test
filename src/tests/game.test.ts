@@ -1,4 +1,4 @@
-import { Field, invertPlayer } from "./game";
+import { Field, invertPlayer } from "..logic/game";
 
 describe("invert player", () => {
     it("invert player1 to player2", () => {
