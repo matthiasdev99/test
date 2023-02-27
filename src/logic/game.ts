@@ -17,6 +17,20 @@ export enum Field {
   PLAYER2,
 }
 
+export const winningPos = [
+  //horizontal
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  //vertical
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  //diagonal
+  [0, 4, 8],
+  [2, 4, 6],
+];
+
 // Player describes a single player
 export class Player {
   score = 0;
@@ -118,21 +132,7 @@ export function isFull(board: Field[]): boolean {
 
 // won tests, if either player has won the game
 // returns: the player, that won, or Field.EMPTY if no one won (draw or not finished)
-export function won(board: Field[]): Field {
-  const winningPos = [
-    //horizontal
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    //vertical
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    //diagonal
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-  
+export function won(board: Field[]): Field {  
   for (const player of [Field.PLAYER1, Field.PLAYER2]) {
     for (const positions of winningPos) {
       //check every array element, all elements must match condition
