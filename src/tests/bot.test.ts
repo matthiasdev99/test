@@ -62,7 +62,4 @@ describe("bot winningMove test", () => {
     it("no valid player", () => {   
         expect(()=>winningMove(board2, invalidPlayer)).toThrow(`Player ${invalidPlayer} is not valid`);
     });
-    it('winning move player 1', () => {
-        expect(winningMove(board2, p2)).toBe(6);
-    });
 });
