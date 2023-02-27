@@ -42,11 +42,6 @@ describe("bot moveWith test", () => {
 const p1: Field = Field.PLAYER1;
 const p2: Field = Field.PLAYER2;
 const E: Field = Field.EMPTY;
-let board1: Field[] = [
-    p1, p1, E,
-    E, E, p1,
-    E, E, E
-];
 let board2: Field[] = [
     p1, p1, p2,
     p2, E, p1,
