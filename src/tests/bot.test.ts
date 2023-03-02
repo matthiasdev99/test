@@ -19,15 +19,15 @@ describe("bot randomMove test", () => {
 describe("bot moveWith test", () => {
     it("mode: human", () => {
       const result = moveWithMode(Mode.HUMAN);
-      expect(result).toBeUndefined;
+      expect(result).toBeUndefined();
     });
     it("mode: human", () => {
         const result = moveWithMode(Mode.HUMAN);
-        expect(result).toBeUndefined;
+        expect(result).toBeUndefined();
       });
     it("mode: online", () => {
         const result = moveWithMode(Mode.ONLINE);
-        expect(result).toBeUndefined;
+        expect(result).toBeUndefined();
     });
     it("mode: easy mode", () => {
         const result = moveWithMode(Mode.EASY);
