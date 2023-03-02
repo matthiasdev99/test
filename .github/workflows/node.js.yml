@@ -3,7 +3,7 @@
 
 name: Node.js CI
 run-name: ${{github.actor}} is running CI
-#on:
+on:
   push:
     branches: [ "main" ]
   pull_request:
