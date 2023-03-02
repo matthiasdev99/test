@@ -1,4 +1,4 @@
-import { Field, Game, Mode, getBlanks, invertPlayer, newBoard } from "../logic/game";
+import { Field, Game, Mode, invertPlayer } from "../logic/game";
 
 describe("invert player", () => {
     it("invert player1 to player2", () => {
@@ -24,7 +24,7 @@ describe("invert player", () => {
 
   describe("updateMode", () => {
     it("update mode to easy", () => {
-      var game: Game = new Game();
+      const game: Game = new Game();
       game.updateMode(Mode.EASY);
       expect(game.mode).toBe(Mode.EASY);
     });
@@ -32,7 +32,7 @@ describe("invert player", () => {
 
   describe("updateMode", () => {
     it("update mode to petty", () => {
-      var game: Game = new Game();
+      const game: Game = new Game();
       game.updateMode(Mode.PETTY);
       expect(game.mode).toBe(Mode.PETTY);
     });
@@ -40,7 +40,7 @@ describe("invert player", () => {
 
   describe("updateMode", () => {
     it("update mode to medium", () => {
-      var game: Game = new Game();
+      const game: Game = new Game();
       game.updateMode(Mode.MEDIUM);
       expect(game.mode).toBe(Mode.MEDIUM);
     });
@@ -48,7 +48,7 @@ describe("invert player", () => {
 
   describe("updateMode", () => {
     it("update mode to hard", () => {
-      var game: Game = new Game();
+      const game: Game = new Game();
       game.updateMode(Mode.HARD);
       expect(game.mode).toBe(Mode.HARD);
     });
@@ -56,7 +56,7 @@ describe("invert player", () => {
 
   describe("updateMode", () => {
     it("update mode to human", () => {
-      var game: Game = new Game();
+      const game: Game = new Game();
       game.updateMode(Mode.HUMAN);
       expect(game.mode).toBe(Mode.HUMAN);
     });

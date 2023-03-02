@@ -1,4 +1,3 @@
-import { empty } from "svelte/internal";
 import { Field, isPlayer, Mode, winningPos } from "../game";
 import { easyMove } from "./easy";
 import { hardMove } from "./hard";

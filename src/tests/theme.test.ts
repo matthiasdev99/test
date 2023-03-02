@@ -1,9 +1,9 @@
-import { Theme, themes } from "../logic/theme"
+import { themes } from "../logic/theme"
 
 describe("check themes for completeness", () => {
     themes.forEach(function (theme){
-        let theme_CSS = theme.CSS();
-        let CSS_tags = theme_CSS.split(";");
+        const theme_CSS = theme.CSS();
+        const CSS_tags = theme_CSS.split(";");
 
         it(`checking primary for theme ${theme.name}`, () => {
             expect(CSS_tags[0]).toMatch('--primary: ')
