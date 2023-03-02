@@ -40,3 +40,8 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: dist # The folder the action should deploy
+    -name: Build and push
+      uses: docker/build-push-action@v4
+      with:
+        push: true
+        tags: user/app:latest
