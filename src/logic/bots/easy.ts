@@ -7,12 +7,11 @@ import { randomMove, winningMove } from "./bot";
 export function easyMove(board: Field[], own: Field): number {
   const potentiallyMove = winningMove(board, own);
 
-  if(potentiallyMove !== -1){
+  if (potentiallyMove !== -1) {
     return potentiallyMove;
   }
 
   const emptyFields = getBlanks(board);
   const move = emptyFields[randomMove(emptyFields.length)];
   return move;
-  
 }

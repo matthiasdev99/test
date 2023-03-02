@@ -76,7 +76,7 @@ export class Game {
     this.enemy.botMove = moveWithMode(this.mode);
   }
 
-  // score a win for the given player 
+  // score a win for the given player
   addWin(player: Field) {
     switch (player) {
       case Field.PLAYER1:
@@ -132,16 +132,14 @@ export function isFull(board: Field[]): boolean {
 
 // won tests, if either player has won the game
 // returns: the player, that won, or Field.EMPTY if no one won (draw or not finished)
-export function won(board: Field[]): Field {  
+export function won(board: Field[]): Field {
   for (const player of [Field.PLAYER1, Field.PLAYER2]) {
     for (const positions of winningPos) {
       //check every array element, all elements must match condition
-      if (
-        positions.every((position) => board[position] === player)
-      ) {
+      if (positions.every((position) => board[position] === player)) {
         return player;
       }
-    } 
+    }
   }
 
   return Field.EMPTY;
@@ -156,16 +154,18 @@ export function newBoard(): Field[] {
 
 // getBlanks returns the indices of all empty fields in a given board
 export function getBlanks(board: Field[]): number[] {
-  return board
-    // first, map all Field.EMPTY to their index, all others to -1
-    .map<number>((field, index) => {
-      if (field !== Field.EMPTY) return -1;
-      return index;
-    })
-    // than, filter out all -1 values
-    .filter((value) => {
-      return value >= 0;
-    });
+  return (
+    board
+      // first, map all Field.EMPTY to their index, all others to -1
+      .map<number>((field, index) => {
+        if (field !== Field.EMPTY) return -1;
+        return index;
+      })
+      // than, filter out all -1 values
+      .filter((value) => {
+        return value >= 0;
+      })
+  );
 }
 
 // invertPlayer returns:

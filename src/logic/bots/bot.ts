@@ -30,21 +30,20 @@ export function moveWithMode(mode: Mode): BotMove | undefined {
 // - -1 if there is none
 export function winningMove(board: Field[], player: Field): number {
   if (!isPlayer(player)) throw new Error(`Player ${player} is not valid`);
-    
-  winningPos.forEach(function (element){
+
+  winningPos.forEach(function (element) {
     let amountCorrect = 0;
     let nextMove = -1;
-    for(let i = 0; i < 3; i++){
-      if(board[element[i]] == player){
+    for (let i = 0; i < 3; i++) {
+      if (board[element[i]] == player) {
         amountCorrect = amountCorrect + 1;
-      }
-      else{
-        if(board[element[i]] == 0){
+      } else {
+        if (board[element[i]] == 0) {
           nextMove = board[element[i]];
         }
       }
     }
-    if(nextMove != -1){
+    if (nextMove != -1) {
       return nextMove;
     }
   });
