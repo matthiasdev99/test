@@ -36,6 +36,14 @@ jobs:
       run: npm run test
     - name: run build
       run: npm run build
+      
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+      
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
@@ -45,4 +53,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: user/app:latest
+        tags: ghcr.io/matthiasdev99/test/tic-tac-toe:${{ env.PROJECT_VERSION }}
