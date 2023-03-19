@@ -32,7 +32,7 @@ jobs:
     # run: npm run check
     - name: run prettier check
       run: npm run format:check
-    - name: unit tests
+    - name: unit test
       run: npm run test
     - name: run build
       run: npm run build
