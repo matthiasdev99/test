@@ -59,4 +59,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/matthiasdev99/test/tic-tac-toe:${{ env.PROJECT_VERSION }}
+          tags: ghcr.io/matthiasdev99/test/tic-tac-toe:latest
